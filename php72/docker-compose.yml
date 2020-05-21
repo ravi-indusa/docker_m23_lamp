@@ -14,11 +14,11 @@ phpmyadmin:
   links:
     - mysql
   environment:
-    PMA_HOST: mysql
+    PMA_HOST: localhost
     PMA_PORT: 3306
   container_name: phpmyadmin_service
 apache2:
-  image: rpatelsynoptek/magento23-apache24:1.0
+  image: phpcuong/magento2-apache2:3.0
   ports:
     - 80:80
     - 10000:10000
