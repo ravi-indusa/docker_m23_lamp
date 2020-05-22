@@ -3,10 +3,10 @@ mysql:
   ports:
     - 3306:3306
   environment:
-    MYSQL_ROOT_PASSWORD: synoptek
+    MYSQL_ROOT_PASSWORD: giaphugroup
   volumes:
     - ../../databases/mysql:/var/lib/mysql
-  container_name: mysql_service
+  container_name: mysql_5.7
 phpmyadmin:
   image: phpmyadmin/phpmyadmin:4.8
   ports:
@@ -14,9 +14,9 @@ phpmyadmin:
   links:
     - mysql
   environment:
-    PMA_HOST: localhost
+    PMA_HOST: mysql
     PMA_PORT: 3306
-  container_name: phpmyadmin_service
+  container_name: phpmyadmin_4.8
 apache2:
   image: phpcuong/magento2-apache2:3.0
   ports:
@@ -27,4 +27,4 @@ apache2:
     - mysql
   volumes:
     - ../../sources:/var/www/html
-  container_name: apache2_service
+  container_name: magento2.3

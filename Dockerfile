@@ -1,6 +1,6 @@
-# Install Ubuntu, Apache, SSL, Webmin, PHP and Composer
+# Docker LAMP Developer
 FROM ubuntu:16.04
-MAINTAINER Ravi Patel
+MAINTAINER Cuong Ngo <bestearnmoney87@gmail.com>
 
 # Base Packages
 RUN apt-get update
@@ -48,7 +48,7 @@ RUN /usr/share/webmin/changepass.pl /etc/webmin root root
 RUN apt-get -y install software-properties-common
 RUN add-apt-repository ppa:ondrej/php
 RUN apt-get -y update
-RUN apt-get -y install php7.3 libapache2-mod-php7.3 php7.3-common php7.3-gd php7.3-mysql php7.3-curl php7.3-intl php7.3-xsl php7.3-mbstring php7.3-zip php7.3-bcmath php7.3-soap php-xdebug php-imagick php-memcache
+RUN apt-get -y install php7.2 libapache2-mod-php7.2 php7.2-common php7.2-gd php7.2-mysql php7.2-curl php7.2-intl php7.2-xsl php7.2-mbstring php7.2-zip php7.2-bcmath php7.2-soap php-xdebug php-imagick php-memcache
 
 # Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
